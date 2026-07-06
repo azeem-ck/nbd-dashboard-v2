@@ -122,7 +122,45 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
-        <section class="space-y-4">
+        <section class="space-y-4 bg-[var(--color-bg-pending-box)] border border-[var(--color-border-pending-box)] p-4 rounded-xl transition-colors duration-200 shadow-xs">
+            <div class="flex items-center justify-between gap-2 text-xs text-[var(--color-text-muted)] pl-1 transition-colors duration-200">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-dot text-[#ffc107] animate-pulse"></i>
+                    <span class="font-black text-[var(--color-text-main)] uppercase tracking-wider text-[10px] transition-colors duration-200">Pending Tasks</span>
+                    <span class="bg-[#ffc107]/15 text-[#ffc107] text-[9px] font-black uppercase tracking-widest px-1.5 py-0.5 rounded border border-[#ffc107]/30">Live Snapshot</span>
+                </div>
+                <span class="text-[var(--color-text-sub)] hidden sm:inline transition-colors duration-200">(Real-Time Queue Data Summary)</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-[var(--color-bg-card)] p-5 rounded-xl border border-[var(--color-border-card)] flex items-center justify-between shadow-xs transition-colors duration-200">
+                    <div>
+                        <p class="text-[10px] font-black text-[var(--color-text-muted)] uppercase tracking-widest transition-colors duration-200">Total Pending Orders</p>
+                        <h3 id="p-orders" class="text-3xl font-black text-[#ffc107] tracking-tight mt-1">0</h3>
+                        <p class="text-[10px] text-[var(--color-text-sub)] mt-0.5 transition-colors duration-200">Active non-cancelled queue</p>
+                    </div>
+                    <div class="bg-[#241d08] text-[#ffc107] p-3 rounded-lg border border-[#3a2e0c]"><i class="fa-solid fa-boxes-stacked text-xl"></i></div>
+                </div>
+                <div class="bg-[var(--color-bg-card)] p-5 rounded-xl border border-[var(--color-border-card)] flex items-center justify-between shadow-xs transition-colors duration-200">
+                    <div>
+                        <p class="text-[10px] font-black text-[var(--color-text-muted)] uppercase tracking-widest transition-colors duration-200">Total Pending Lines</p>
+                        <h3 id="p-lines" class="text-3xl font-black text-[#ffc107] tracking-tight mt-1">0</h3>
+                        <p class="text-[10px] text-[var(--color-text-sub)] mt-0.5 transition-colors duration-200">Excludes external item lines</p>
+                    </div>
+                    <div class="bg-[#241d08] text-[#ffc107] p-3 rounded-lg border border-[#3a2e0c]"><i class="fa-solid fa-receipt text-xl"></i></div>
+                </div>
+                <div class="bg-[var(--color-bg-card)] p-5 rounded-xl border border-[var(--color-border-card)] flex items-center justify-between shadow-xs transition-colors duration-200">
+                    <div>
+                        <p class="text-[10px] font-black text-[var(--color-text-muted)] uppercase tracking-widest transition-colors duration-200">Total Pending Quantity</p>
+                        <h3 id="p-units" class="text-3xl font-black text-[#ffc107] tracking-tight mt-1">0</h3>
+                        <p class="text-[10px] text-[var(--color-text-sub)] mt-0.5 transition-colors duration-200">Across all orders</p>
+                    </div>
+                    <div class="bg-[#241d08] text-[#ffc107] p-3 rounded-lg border border-[#3a2e0c]"><i class="fa-solid fa-layer-group text-xl"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[var(--color-bg-card)] p-4 rounded-xl border border-[var(--color-border-card)] shadow-md transition-colors duration-200">
                 <div class="flex items-center gap-2.5">
                     <div class="bg-[var(--color-bg-page)] text-[#209d74] p-2 rounded-lg border border-[var(--color-border-inner)] shadow-inner transition-colors duration-200">
